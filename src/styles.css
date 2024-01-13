@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@coreui/coreui/scss/coreui.scss";
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+html, body {
+  height: 100vh;
+  width: 100%;
+  background-color: #f0f4f7 !important;
+}
+
+.sidebar.sidebar-fixed {
+  position: relative !important;
+}

@@ -1,1 +1,92 @@
-<p>user-form works!</p>
+<div class="container mt-4 fadein animation-duration-400"
+  [ngClass]="{'d-none': show === false}">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-11 col-lg-11">
+      <c-card class="border-start-3" style="border-left-color: #042c93;">
+        <c-card-header>
+          <h5>Formulario Usuarios</h5>
+        </c-card-header>
+        <c-card-body>
+          <div class="row mt-1 mb-2">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+              <button cButton style="width: 100%;" (click)="showFormEvent()">
+                <svg [cIcon]="icons.cilArrowLeft" title="Return icon"></svg> Regresar
+              </button>
+            </div>
+          </div>
+
+          <form [formGroup]="formGroup"(ngSubmit)="onSubmit()" cForm>
+            <div class="row mt-3">
+              <!-- Username -->
+              <div class="col-md-4 mb-3">
+                <label cLabel for="username">Usuario</label>
+                <input cFormControl
+                  formControlName="username"
+                  id="username"
+                  placeholder="Ingresa el usuario"
+                  type="text" />
+              </div>
+              <!-- First Name -->
+              <div class="col-md-4 mb-3">
+                <label cLabel for="firstName">Nombre</label>
+                <input cFormControl
+                  formControlName="firstName"
+                  id="firstName"
+                  placeholder="Ingresa el nombre"
+                  type="text" />
+              </div>
+              <!-- Last Name -->
+              <div class="col-md-4 mb-3">
+                <label cLabel for="lastName">Apellido Paterno</label>
+                <input cFormControl
+                  formControlName="lastName"
+                  id="lastName"
+                  placeholder="Ingresa el apellido paterno"
+                  type="text" />
+              </div>
+              <!-- Password -->
+              <div class="col-md-4 mb-3">
+                <label cLabel for="password">Contraseña</label>
+                <input cFormControl
+                  formControlName="password"
+                  id="password"
+                  placeholder="Ingresa la contraseña"
+                  type="password" />
+              </div>
+              <!-- Email -->
+              <div class="col-md-4 mb-3">
+                <label cLabel for="email">Email</label>
+                <input cFormControl
+                  formControlName="email"
+                  id="email"
+                  placeholder="Ingresa el email"
+                  type="email" />
+              </div>
+              <!-- Status -->
+              <div class="col-md-4 mb-3">
+                <label cLabel for="email">Estatus</label>
+                <select cSelect formControlName="status">
+                  <option>Seleccionar</option>
+                  <option value="1">Activo</option>
+                  <option value="0">Inactivo</option>
+                </select>
+              </div>
+            </div>
+            <!-- Button -->
+            <div class="row mt-3 justify-content-center">
+              <div class="col-md-4 mb-3">
+                <button 
+                  cButton 
+                  style="width: 100%;" 
+                  color="success"
+                  type="submit">
+                  <svg [cIcon]="icons.cilPlus" title="Add icon"></svg> Agregar
+                </button>
+              </div>
+            </div>
+          </form>
+        </c-card-body>
+      </c-card>
+    </div>
+  </div>
+</div>

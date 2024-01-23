@@ -11,17 +11,9 @@ import { INavData, SidebarModule } from '@coreui/angular';
 export class SidebarComponent {
 
   navItems: INavData[] = [
-    {
-      name: 'Usuarios',
-      url: '/user',
-      icon: '',
-      title: false
-    }, {
-      name: 'Roles',
-      url: '/role',
-      icon: '',
-      title: false
-    }
+    { name: 'Administración', title: true},
+    { name: 'Usuarios', url: '/user', icon: 'cilList' }, 
+    { name: 'Roles', url: '/role' }
   ]
 
 }

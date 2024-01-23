@@ -13,7 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RouterOutlet,
     HttpClientModule,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

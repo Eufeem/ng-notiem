@@ -5,11 +5,12 @@
 - Docker
 
 ## Dependencies
-- CoreUI - npm install @coreui/angular@4
-- CoreUICss - npm install @coreui/coreui
+- CoreUI       - npm install @coreui/angular@4
+- CoreUICss    - npm install @coreui/coreui
 - CoreUI Icons - npm install @coreui/icons
                  npm install @coreui/icons-angular
-- Bootstrap - npm install bootstrap
+- Bootstrap    - npm install bootstrapp
+- PrimeNg Flex - npm install primeflex
 
 ## Comands
 - Run dev: ng s -o

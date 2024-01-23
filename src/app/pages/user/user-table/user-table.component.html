@@ -1,1 +1,68 @@
-<p>user-table works!</p>
+<div 
+  class="container mt-4 fadein animation-duration-400" 
+  [ngClass]="{'d-none': isShowForm === true}">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-11 col-lg-11">
+      <c-card class="border-start-3" style="border-left-color: #042c93;">
+        <c-card-header>
+          <h5>Gestión Usuarios</h5>
+        </c-card-header>
+        <c-card-body>
+          <div class="row mt-1 mb-2">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+              <button cButton style="width: 100%;" (click)="showFormEvent()">
+                <svg [cIcon]="icons.cilPlus" title="List Icon"></svg> Agregar Nuevo
+              </button>
+            </div>
+          </div>
+
+          <div class="row mt-3 justify-content-center">
+            <div className="col-11">
+              <table 
+                responsive cTable bordered datatable hover
+                aria-describedby="Table user"
+                class="text-center align-middle" >
+                <thead cTableColor="light">
+                  <tr>
+                    @for (header of headerList; track $index) {
+                      <th>{{header}}</th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of userList; track $index) {
+                    <tr>
+                      <td>{{item.idUser}}</td>
+                      <td>{{item.username}}</td>
+                      <td>{{item.firstName}}</td>
+                      <td>{{item.lastName}}</td>
+                      <td>{{item.email}}</td>
+                      <td>
+                        @if (item.status == 1) {
+                          <c-badge color="success">Activo</c-badge>
+                        } @else { 
+                          <c-badge color="danger">Inactivo</c-badge>
+                        }
+                      </td>
+                      <td>
+                        <button cButton color="warning">
+                          <svg [cIcon]="icons.cilPencil" title="List Icon"></svg>
+                        </button> &nbsp;
+                        <button cButton color="danger">
+                          <svg [cIcon]="icons.cilTrash" title="List Icon"></svg>
+                        </button>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </c-card-body>
+      </c-card>
+    </div>
+  </div>
+</div>
+
+<app-user-form [(show)]="isShowForm" />
